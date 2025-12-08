@@ -1,0 +1,892 @@
+{
+  "version": "1.0.0",
+  "last_updated": "2025-12-08",
+  "providers": {
+    "anthropic": {
+      "name": "Anthropic",
+      "base_url": "https://api.anthropic.com",
+      "docs": "https://docs.anthropic.com"
+    },
+    "openai": {
+      "name": "OpenAI",
+      "base_url": "https://api.openai.com",
+      "docs": "https://platform.openai.com/docs"
+    },
+    "amazon_bedrock": {
+      "name": "Amazon Bedrock",
+      "base_url": "https://bedrock-runtime.{region}.amazonaws.com",
+      "docs": "https://docs.aws.amazon.com/bedrock"
+    },
+    "google": {
+      "name": "Google AI Studio",
+      "base_url": "https://generativelanguage.googleapis.com",
+      "docs": "https://ai.google.dev/docs"
+    },
+    "google_vertex": {
+      "name": "Google Vertex AI",
+      "base_url": "https://{region}-aiplatform.googleapis.com",
+      "docs": "https://cloud.google.com/vertex-ai/docs"
+    },
+    "azure_openai": {
+      "name": "Azure OpenAI",
+      "base_url": "https://{resource}.openai.azure.com",
+      "docs": "https://learn.microsoft.com/azure/ai-services/openai"
+    },
+    "openrouter": {
+      "name": "OpenRouter",
+      "base_url": "https://openrouter.ai/api",
+      "docs": "https://openrouter.ai/docs"
+    },
+    "z_ai": {
+      "name": "Z.ai",
+      "base_url": "https://api.z.ai",
+      "docs": "https://docs.z.ai"
+    },
+    "deepseek": {
+      "name": "DeepSeek",
+      "base_url": "https://api.deepseek.com",
+      "docs": "https://api-docs.deepseek.com"
+    },
+    "moonshot": {
+      "name": "Moonshot AI",
+      "base_url": "https://api.moonshot.ai",
+      "docs": "https://platform.moonshot.ai/docs"
+    },
+    "minimax": {
+      "name": "MiniMax",
+      "base_url": "https://api.minimax.chat",
+      "docs": "https://platform.minimax.chat/docs"
+    },
+    "xai": {
+      "name": "xAI",
+      "base_url": "https://api.x.ai",
+      "docs": "https://docs.x.ai"
+    },
+    "qwen": {
+      "name": "Alibaba Qwen",
+      "base_url": "https://dashscope.aliyuncs.com",
+      "docs": "https://www.alibabacloud.com/help/en/model-studio"
+    }
+  },
+  "models": [
+    {
+      "id": "claude-opus-4-5",
+      "name": "Claude Opus 4.5",
+      "description": "Anthropic's most intelligent model, combining maximum capability with practical performance for complex reasoning and analysis.",
+      "provider": "anthropic",
+      "api_model_id": "claude-opus-4-5-20251101",
+      "aliases": {
+        "anthropic": "claude-opus-4-5-20251101",
+        "amazon_bedrock": "anthropic.claude-opus-4-5-20251101-v1:0",
+        "google_vertex": "claude-opus-4-5@20251101",
+        "openrouter": "anthropic/claude-opus-4.5"
+      },
+      "pricing": {
+        "input_per_1m": 5.00,
+        "output_per_1m": 25.00,
+        "currency": "USD"
+      },
+      "context_window": 200000,
+      "max_output_tokens": 64000,
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "vision", "streaming"],
+      "thinking": {
+        "supported": true,
+        "parameter_format": {
+          "anthropic": { "thinking": { "type": "enabled", "budget_tokens": "NUMBER" } },
+          "amazon_bedrock": { "thinking": { "type": "enabled", "budget_tokens": "NUMBER" } },
+          "google_vertex": { "thinking": { "type": "enabled", "budget_tokens": "NUMBER" } },
+          "openrouter": { "reasoning": { "type": "enabled", "budget_tokens": "NUMBER" } }
+        }
+      },
+      "release_date": "2025-11-01",
+      "is_opensource": false
+    },
+    {
+      "id": "claude-sonnet-4-5",
+      "name": "Claude Sonnet 4.5",
+      "description": "Anthropic's best balance of intelligence and speed for complex agents and coding tasks.",
+      "provider": "anthropic",
+      "api_model_id": "claude-sonnet-4-5-20250929",
+      "aliases": {
+        "anthropic": "claude-sonnet-4-5-20250929",
+        "amazon_bedrock": "anthropic.claude-sonnet-4-5-20250929-v1:0",
+        "google_vertex": "claude-sonnet-4-5@20250929",
+        "openrouter": "anthropic/claude-sonnet-4.5"
+      },
+      "pricing": {
+        "input_per_1m": 3.00,
+        "output_per_1m": 15.00,
+        "currency": "USD"
+      },
+      "context_window": 200000,
+      "max_output_tokens": 64000,
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "vision", "streaming"],
+      "thinking": {
+        "supported": true,
+        "parameter_format": {
+          "anthropic": { "thinking": { "type": "enabled", "budget_tokens": "NUMBER" } },
+          "amazon_bedrock": { "thinking": { "type": "enabled", "budget_tokens": "NUMBER" } },
+          "google_vertex": { "thinking": { "type": "enabled", "budget_tokens": "NUMBER" } },
+          "openrouter": { "reasoning": { "type": "enabled", "budget_tokens": "NUMBER" } }
+        }
+      },
+      "release_date": "2025-09-29",
+      "is_opensource": false
+    },
+    {
+      "id": "claude-haiku-4-5",
+      "name": "Claude Haiku 4.5",
+      "description": "Anthropic's fastest model with near-frontier intelligence, optimized for speed and cost.",
+      "provider": "anthropic",
+      "api_model_id": "claude-haiku-4-5-20251001",
+      "aliases": {
+        "anthropic": "claude-haiku-4-5-20251001",
+        "amazon_bedrock": "anthropic.claude-haiku-4-5-20251001-v1:0",
+        "google_vertex": "claude-haiku-4-5@20251001",
+        "openrouter": "anthropic/claude-haiku-4.5"
+      },
+      "pricing": {
+        "input_per_1m": 1.00,
+        "output_per_1m": 5.00,
+        "currency": "USD"
+      },
+      "context_window": 200000,
+      "max_output_tokens": 64000,
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "vision", "streaming"],
+      "thinking": {
+        "supported": true,
+        "parameter_format": {
+          "anthropic": { "thinking": { "type": "enabled", "budget_tokens": "NUMBER" } },
+          "amazon_bedrock": { "thinking": { "type": "enabled", "budget_tokens": "NUMBER" } },
+          "google_vertex": { "thinking": { "type": "enabled", "budget_tokens": "NUMBER" } },
+          "openrouter": { "reasoning": { "type": "enabled", "budget_tokens": "NUMBER" } }
+        }
+      },
+      "release_date": "2025-10-01",
+      "is_opensource": false
+    },
+    {
+      "id": "gpt-5.1",
+      "name": "GPT-5.1",
+      "description": "OpenAI's frontier-grade general-purpose model with adaptive reasoning, improved instruction adherence, and natural conversational style.",
+      "provider": "openai",
+      "api_model_id": "gpt-5.1",
+      "aliases": {
+        "openai": "gpt-5.1",
+        "azure_openai": "gpt-5.1",
+        "openrouter": "openai/gpt-5.1"
+      },
+      "pricing": {
+        "input_per_1m": 1.25,
+        "output_per_1m": 10.00,
+        "currency": "USD"
+      },
+      "context_window": 400000,
+      "max_output_tokens": 128000,
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "vision", "streaming"],
+      "thinking": {
+        "supported": true,
+        "parameter_format": {
+          "openai": { "reasoning": { "effort": "low|medium|high|none" } },
+          "openrouter": { "reasoning": { "effort": "low|medium|high|none" } }
+        }
+      },
+      "release_date": "2025-11-01",
+      "is_opensource": false
+    },
+    {
+      "id": "gpt-5.1-chat",
+      "name": "GPT-5.1 Chat",
+      "description": "Fast, lightweight variant optimized for low-latency chat while retaining strong general intelligence. Also known as GPT-5.1 Instant.",
+      "provider": "openai",
+      "api_model_id": "gpt-5.1-chat",
+      "aliases": {
+        "openai": "gpt-5.1-chat",
+        "azure_openai": "gpt-5.1-chat",
+        "openrouter": "openai/gpt-5.1-chat"
+      },
+      "pricing": {
+        "input_per_1m": 1.25,
+        "output_per_1m": 10.00,
+        "currency": "USD"
+      },
+      "context_window": 128000,
+      "max_output_tokens": 32000,
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "vision", "streaming"],
+      "thinking": {
+        "supported": true,
+        "parameter_format": {
+          "openai": { "reasoning": { "effort": "low|medium|high|none" } },
+          "openrouter": { "reasoning": { "effort": "low|medium|high|none" } }
+        }
+      },
+      "release_date": "2025-11-01",
+      "is_opensource": false
+    },
+    {
+      "id": "gpt-5.1-codex",
+      "name": "GPT-5.1-Codex",
+      "description": "Specialized for software engineering workflows including debugging, refactoring, and code review. More steerable with cleaner code outputs.",
+      "provider": "openai",
+      "api_model_id": "gpt-5.1-codex",
+      "aliases": {
+        "openai": "gpt-5.1-codex",
+        "azure_openai": "gpt-5.1-codex",
+        "openrouter": "openai/gpt-5.1-codex"
+      },
+      "pricing": {
+        "input_per_1m": 1.25,
+        "output_per_1m": 10.00,
+        "currency": "USD"
+      },
+      "context_window": 400000,
+      "max_output_tokens": 128000,
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "vision", "streaming"],
+      "thinking": {
+        "supported": true,
+        "parameter_format": {
+          "openai": { "reasoning": { "effort": "low|medium|high|none" } },
+          "openrouter": { "reasoning": { "effort": "low|medium|high|none" } }
+        }
+      },
+      "release_date": "2025-11-01",
+      "is_opensource": false
+    },
+    {
+      "id": "gpt-5.1-codex-max",
+      "name": "GPT-5.1-Codex-Max",
+      "description": "OpenAI's most capable agentic coding model for long-running, high-context software development tasks with extended reasoning.",
+      "provider": "openai",
+      "api_model_id": "gpt-5.1-codex-max",
+      "aliases": {
+        "openai": "gpt-5.1-codex-max",
+        "azure_openai": "gpt-5.1-codex-max",
+        "openrouter": "openai/gpt-5.1-codex-max"
+      },
+      "pricing": {
+        "input_per_1m": 1.25,
+        "output_per_1m": 10.00,
+        "currency": "USD"
+      },
+      "context_window": 400000,
+      "max_output_tokens": 128000,
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "vision", "streaming"],
+      "thinking": {
+        "supported": true,
+        "parameter_format": {
+          "openai": { "reasoning": { "effort": "low|medium|high|none" } },
+          "openrouter": { "reasoning": { "effort": "low|medium|high|none" } }
+        }
+      },
+      "release_date": "2025-11-01",
+      "is_opensource": false
+    },
+    {
+      "id": "gpt-5.1-codex-mini",
+      "name": "GPT-5.1-Codex-Mini",
+      "description": "Smaller, faster version of GPT-5.1-Codex for cost-efficient coding tasks.",
+      "provider": "openai",
+      "api_model_id": "gpt-5.1-codex-mini",
+      "aliases": {
+        "openai": "gpt-5.1-codex-mini",
+        "azure_openai": "gpt-5.1-codex-mini",
+        "openrouter": "openai/gpt-5.1-codex-mini"
+      },
+      "pricing": {
+        "input_per_1m": 0.25,
+        "output_per_1m": 2.00,
+        "currency": "USD"
+      },
+      "context_window": 400000,
+      "max_output_tokens": 128000,
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "vision", "streaming"],
+      "thinking": {
+        "supported": true,
+        "parameter_format": {
+          "openai": { "reasoning": { "effort": "low|medium|high|none" } },
+          "openrouter": { "reasoning": { "effort": "low|medium|high|none" } }
+        }
+      },
+      "release_date": "2025-11-01",
+      "is_opensource": false
+    },
+    {
+      "id": "gpt-5-mini",
+      "name": "GPT-5-mini",
+      "description": "Compact version of GPT-5 for lighter reasoning tasks. ~80% of GPT-5 performance at 20% cost.",
+      "provider": "openai",
+      "api_model_id": "gpt-5-mini",
+      "aliases": {
+        "openai": "gpt-5-mini",
+        "azure_openai": "gpt-5-mini",
+        "openrouter": "openai/gpt-5-mini"
+      },
+      "pricing": {
+        "input_per_1m": 0.25,
+        "output_per_1m": 2.00,
+        "currency": "USD"
+      },
+      "context_window": 400000,
+      "max_output_tokens": 128000,
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "vision", "streaming"],
+      "thinking": {
+        "supported": true,
+        "parameter_format": {
+          "openai": { "reasoning": { "effort": "low|medium|high|none" } },
+          "openrouter": { "reasoning": { "effort": "low|medium|high|none" } }
+        }
+      },
+      "release_date": "2025-08-07",
+      "is_opensource": false
+    },
+    {
+      "id": "glm-4-6",
+      "name": "GLM-4.6",
+      "description": "Z.ai's flagship open-source model with 357B MoE parameters, rivaling Claude Sonnet 4 in agentic and coding tasks.",
+      "provider": "z_ai",
+      "api_model_id": "glm-4.6",
+      "aliases": {
+        "z_ai": "glm-4.6",
+        "openrouter": "z-ai/glm-4.6"
+      },
+      "pricing": {
+        "input_per_1m": 0.40,
+        "output_per_1m": 1.75,
+        "currency": "USD",
+        "note": "OpenRouter pricing; Z.ai direct may differ"
+      },
+      "context_window": 200000,
+      "max_output_tokens": 128000,
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "streaming"],
+      "thinking": {
+        "supported": true,
+        "parameter_format": {
+          "z_ai": { "thinking": { "type": "enabled" } },
+          "openrouter": { "reasoning": { "type": "enabled" } }
+        }
+      },
+      "release_date": "2025-09-30",
+      "is_opensource": true
+    },
+    {
+      "id": "gemini-3-pro",
+      "name": "Gemini 3 Pro",
+      "description": "Google's most advanced model for multimodal understanding with 1M context. Tiered pricing based on context length.",
+      "provider": "google",
+      "api_model_id": "gemini-3-pro-preview",
+      "aliases": {
+        "google": "gemini-3-pro-preview",
+        "google_vertex": "gemini-3-pro-preview",
+        "openrouter": "google/gemini-3-pro"
+      },
+      "pricing": {
+        "input_per_1m": 2.00,
+        "output_per_1m": 12.00,
+        "currency": "USD",
+        "note": "Under 200K context. Over 200K: $4/$18"
+      },
+      "context_window": 1048576,
+      "max_output_tokens": 65536,
+      "modalities": {
+        "input": ["text", "image", "audio", "video"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "vision", "streaming", "structured_output"],
+      "structured_output": {
+        "responseSchema": "OpenAPI-based schema for structured JSON output",
+        "responseJsonSchema": "JSON Schema-based for advanced validations (anyOf, $ref, etc)",
+        "responseMimeType": "application/json"
+      },
+      "thinking": {
+        "supported": true,
+        "parameter_format": {
+          "google": { "generationConfig": { "thinkingConfig": { "thinkingBudget": "NUMBER" } } },
+          "openrouter": { "reasoning": { "effort": "low|medium|high" } }
+        }
+      },
+      "release_date": "2025-11-18",
+      "is_opensource": false
+    },
+    {
+      "id": "gemini-2.5-flash",
+      "name": "Gemini 2.5 Flash",
+      "description": "Google's best price-performance model for large scale processing, low-latency tasks, and agentic use cases.",
+      "provider": "google",
+      "api_model_id": "gemini-2.5-flash",
+      "aliases": {
+        "google": "gemini-2.5-flash",
+        "google_vertex": "gemini-2.5-flash",
+        "openrouter": "google/gemini-2.5-flash"
+      },
+      "pricing": {
+        "input_per_1m": 0.30,
+        "output_per_1m": 2.50,
+        "currency": "USD"
+      },
+      "context_window": 1048576,
+      "max_output_tokens": 65536,
+      "modalities": {
+        "input": ["text", "image", "audio", "video"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "vision", "streaming", "structured_output"],
+      "structured_output": {
+        "responseSchema": "OpenAPI-based schema",
+        "responseJsonSchema": "JSON Schema-based (anyOf, $ref)",
+        "responseMimeType": "application/json"
+      },
+      "thinking": {
+        "supported": true,
+        "parameter_format": {
+          "google": { "generationConfig": { "thinkingConfig": { "thinkingBudget": "NUMBER" } } },
+          "openrouter": { "reasoning": { "effort": "low|medium|high" } }
+        }
+      },
+      "release_date": "2025-04-01",
+      "is_opensource": false
+    },
+    {
+      "id": "gemini-2.5-flash-lite",
+      "name": "Gemini 2.5 Flash-Lite",
+      "description": "Google's lowest-cost 2.5 model, ultra-fast for high-volume simple tasks.",
+      "provider": "google",
+      "api_model_id": "gemini-2.5-flash-lite",
+      "aliases": {
+        "google": "gemini-2.5-flash-lite",
+        "google_vertex": "gemini-2.5-flash-lite",
+        "openrouter": "google/gemini-2.5-flash-lite"
+      },
+      "pricing": {
+        "input_per_1m": 0.10,
+        "output_per_1m": 0.40,
+        "currency": "USD"
+      },
+      "context_window": 1048576,
+      "max_output_tokens": 65536,
+      "modalities": {
+        "input": ["text", "image", "audio", "video"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "vision", "streaming", "structured_output"],
+      "structured_output": {
+        "responseSchema": "OpenAPI-based schema",
+        "responseJsonSchema": "JSON Schema-based (anyOf, $ref)",
+        "responseMimeType": "application/json"
+      },
+      "thinking": {
+        "supported": false
+      },
+      "release_date": "2025-06-01",
+      "is_opensource": false
+    },
+    {
+      "id": "deepseek-v3.2",
+      "name": "DeepSeek V3.2",
+      "description": "DeepSeek's flagship open-source model with Sparse Attention. Use deepseek-chat for fast responses, deepseek-reasoner for CoT thinking.",
+      "provider": "deepseek",
+      "api_model_id": "deepseek-chat",
+      "aliases": {
+        "deepseek": "deepseek-chat",
+        "deepseek_reasoner": "deepseek-reasoner",
+        "openrouter": "deepseek/deepseek-chat"
+      },
+      "pricing": {
+        "input_per_1m": 0.28,
+        "output_per_1m": 0.42,
+        "currency": "USD",
+        "note": "Cache hit: $0.028 input"
+      },
+      "context_window": 128000,
+      "max_output_tokens": 64000,
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "streaming"],
+      "thinking": {
+        "supported": true,
+        "parameter_format": {
+          "deepseek": "Use model_id 'deepseek-reasoner' instead of 'deepseek-chat' to enable thinking"
+        },
+        "note": "Reasoning outputs via 'reasoning_content' field. Max output 8K without thinking, 64K with."
+      },
+      "release_date": "2025-09-29",
+      "is_opensource": true
+    },
+    {
+      "id": "kimi-k2",
+      "name": "Kimi K2",
+      "description": "Moonshot AI's 1T parameter MoE model (32B active). State-of-the-art in knowledge, math, and coding among non-thinking models. Turbo variant available for faster inference.",
+      "provider": "moonshot",
+      "api_model_id": "kimi-k2",
+      "aliases": {
+        "moonshot": "kimi-k2",
+        "moonshot_turbo": "kimi-k2-turbo",
+        "openrouter": "moonshotai/kimi-k2"
+      },
+      "pricing": {
+        "input_per_1m": 0.46,
+        "output_per_1m": 1.84,
+        "currency": "USD"
+      },
+      "context_window": 131072,
+      "max_output_tokens": 131072,
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "streaming"],
+      "thinking": {
+        "supported": false
+      },
+      "release_date": "2025-07-11",
+      "is_opensource": true
+    },
+    {
+      "id": "kimi-k2-thinking",
+      "name": "Kimi K2 Thinking",
+      "description": "Kimi K2 with interleaved chain-of-thought reasoning, tool calls, long-horizon planning, and automated self-checks.",
+      "provider": "moonshot",
+      "api_model_id": "kimi-k2-thinking",
+      "aliases": {
+        "moonshot": "kimi-k2-thinking",
+        "openrouter": "moonshotai/kimi-k2-thinking"
+      },
+      "pricing": {
+        "input_per_1m": 0.45,
+        "output_per_1m": 2.35,
+        "currency": "USD"
+      },
+      "context_window": 262144,
+      "max_output_tokens": 16384,
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "streaming"],
+      "thinking": {
+        "supported": true,
+        "parameter_format": {
+          "moonshot": "Enabled by default with kimi-k2-thinking model",
+          "openrouter": "Uses <think></think> tokens, reasoning via 'reasoning-content' field"
+        }
+      },
+      "release_date": "2025-11-01",
+      "is_opensource": true
+    },
+    {
+      "id": "minimax-m2",
+      "name": "MiniMax M2",
+      "description": "Compact 230B MoE model (10B active) optimized for coding and agentic tasks. 8% of Claude Sonnet's price with 2x inference speed.",
+      "provider": "minimax",
+      "api_model_id": "minimax-m2",
+      "aliases": {
+        "minimax": "minimax-m2",
+        "openrouter": "minimax/minimax-m2"
+      },
+      "pricing": {
+        "input_per_1m": 0.26,
+        "output_per_1m": 1.02,
+        "currency": "USD"
+      },
+      "context_window": 204800,
+      "max_output_tokens": 64000,
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "streaming"],
+      "thinking": {
+        "supported": true,
+        "parameter_format": {
+          "minimax": "Uses <think></think> tokens",
+          "openrouter": "reasoning_details for multi-turn reasoning preservation"
+        }
+      },
+      "release_date": "2025-10-27",
+      "is_opensource": true
+    },
+    {
+      "id": "grok-4",
+      "name": "Grok 4",
+      "description": "xAI's flagship reasoning model. Use grok-4-fast for speed/cost, grok-4 for maximum capability.",
+      "provider": "xai",
+      "api_model_id": "grok-4",
+      "aliases": {
+        "xai": "grok-4",
+        "openrouter": "x-ai/grok-4"
+      },
+      "pricing": {
+        "input_per_1m": 3.00,
+        "output_per_1m": 15.00,
+        "currency": "USD",
+        "note": "Cached input: $0.75/1M"
+      },
+      "context_window": 256000,
+      "max_output_tokens": 32000,
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "vision", "streaming"],
+      "thinking": {
+        "supported": true
+      },
+      "release_date": "2025-07-09",
+      "is_opensource": false
+    },
+    {
+      "id": "grok-4.1-fast",
+      "name": "Grok 4.1 Fast",
+      "description": "Best tool-calling model with 2M context. Half the hallucination rate of Grok 4 Fast. Reasoning and non-reasoning variants.",
+      "provider": "xai",
+      "api_model_id": "grok-4-1-fast-reasoning",
+      "aliases": {
+        "xai": "grok-4-1-fast-reasoning",
+        "xai_non_reasoning": "grok-4-1-fast-non-reasoning",
+        "openrouter": "x-ai/grok-4.1-fast"
+      },
+      "pricing": {
+        "input_per_1m": 0.20,
+        "output_per_1m": 0.50,
+        "currency": "USD",
+        "note": "Cached: $0.05 input. Tool invocations: $5/1K calls"
+      },
+      "context_window": 2000000,
+      "max_output_tokens": 30000,
+      "modalities": {
+        "input": ["text", "image"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "vision", "streaming", "web_search", "code_execution"],
+      "thinking": {
+        "supported": true,
+        "parameter_format": {
+          "xai": "Use grok-4-1-fast-reasoning for thinking, grok-4-1-fast-non-reasoning for speed"
+        }
+      },
+      "release_date": "2025-11-19",
+      "is_opensource": false
+    },
+    {
+      "id": "grok-code-fast",
+      "name": "Grok Code Fast",
+      "description": "Code-optimized variant of Grok Fast for software development tasks.",
+      "provider": "xai",
+      "api_model_id": "grok-code-fast-1",
+      "aliases": {
+        "xai": "grok-code-fast-1",
+        "openrouter": "x-ai/grok-code-fast-1"
+      },
+      "pricing": {
+        "input_per_1m": 0.20,
+        "output_per_1m": 1.50,
+        "currency": "USD"
+      },
+      "context_window": 2000000,
+      "max_output_tokens": 30000,
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "streaming"],
+      "thinking": {
+        "supported": false
+      },
+      "release_date": "2025-11-01",
+      "is_opensource": false
+    },
+    {
+      "id": "qwen-max",
+      "name": "Qwen-Max",
+      "description": "Alibaba's flagship large-scale MoE model, pretrained on 20T+ tokens with RLHF. Not open source.",
+      "provider": "qwen",
+      "api_model_id": "qwen-max",
+      "aliases": {
+        "qwen": "qwen-max",
+        "openrouter": "qwen/qwen-max"
+      },
+      "pricing": {
+        "input_per_1m": 1.60,
+        "output_per_1m": 6.40,
+        "currency": "USD"
+      },
+      "context_window": 32768,
+      "max_output_tokens": 8192,
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "streaming"],
+      "thinking": {
+        "supported": true
+      },
+      "release_date": "2025-01-01",
+      "is_opensource": false
+    },
+    {
+      "id": "qwen3-next-80b-a3b",
+      "name": "Qwen3-Next-80B-A3B",
+      "description": "80B MoE (3B active) instruction model for reasoning, code, and multilingual tasks. Thinking variant available.",
+      "provider": "qwen",
+      "api_model_id": "qwen3-next-80b-a3b-instruct",
+      "aliases": {
+        "qwen": "qwen3-next-80b-a3b-instruct",
+        "qwen_thinking": "qwen3-next-80b-a3b-thinking",
+        "openrouter": "qwen/qwen3-next-80b-a3b-instruct"
+      },
+      "pricing": {
+        "input_per_1m": 0.10,
+        "output_per_1m": 0.80,
+        "currency": "USD"
+      },
+      "context_window": 262144,
+      "max_output_tokens": 262144,
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "streaming"],
+      "thinking": {
+        "supported": true,
+        "parameter_format": {
+          "qwen": "Use qwen3-next-80b-a3b-thinking model for reasoning mode",
+          "openrouter": "Uses <think></think> tokens"
+        }
+      },
+      "release_date": "2025-09-01",
+      "is_opensource": true
+    },
+    {
+      "id": "qwen3-235b-a22b-thinking",
+      "name": "Qwen3-235B-A22B-Thinking",
+      "description": "235B MoE (22B active) reasoning model. July 2507 version with enhanced thinking capabilities.",
+      "provider": "qwen",
+      "api_model_id": "qwen3-235b-a22b-thinking-2507",
+      "aliases": {
+        "qwen": "qwen3-235b-a22b-thinking-2507",
+        "openrouter": "qwen/qwen3-235b-a22b-thinking"
+      },
+      "pricing": {
+        "input_per_1m": 0.24,
+        "output_per_1m": 2.42,
+        "currency": "USD"
+      },
+      "context_window": 131072,
+      "max_output_tokens": 65536,
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "streaming"],
+      "thinking": {
+        "supported": true,
+        "parameter_format": {
+          "openrouter": "Uses <think></think> tokens, reasoning_config"
+        }
+      },
+      "release_date": "2025-07-01",
+      "is_opensource": true
+    },
+    {
+      "id": "qwen3-30b-a3b",
+      "name": "Qwen3-30B-A3B",
+      "description": "30B MoE (3B active) model. Compact and efficient for general tasks. 2507 version available.",
+      "provider": "qwen",
+      "api_model_id": "qwen3-30b-a3b",
+      "aliases": {
+        "qwen": "qwen3-30b-a3b",
+        "qwen_2507": "qwen3-30b-a3b-2507",
+        "openrouter": "qwen/qwen3-30b-a3b"
+      },
+      "pricing": {
+        "input_per_1m": 0.06,
+        "output_per_1m": 0.22,
+        "currency": "USD"
+      },
+      "context_window": 40960,
+      "max_output_tokens": 40960,
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "streaming"],
+      "thinking": {
+        "supported": true,
+        "parameter_format": {
+          "openrouter": "Uses <think></think> tokens"
+        }
+      },
+      "release_date": "2025-04-29",
+      "is_opensource": true
+    },
+    {
+      "id": "qwen3-4b",
+      "name": "Qwen3-4B",
+      "description": "Compact 4B dense model for edge deployment and cost-sensitive applications.",
+      "provider": "qwen",
+      "api_model_id": "qwen3-4b",
+      "aliases": {
+        "qwen": "qwen3-4b",
+        "openrouter": "qwen/qwen3-4b"
+      },
+      "pricing": {
+        "input_per_1m": 0.02,
+        "output_per_1m": 0.06,
+        "currency": "USD"
+      },
+      "context_window": 32768,
+      "max_output_tokens": 8192,
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      },
+      "features": ["streaming"],
+      "thinking": {
+        "supported": false
+      },
+      "release_date": "2025-04-29",
+      "is_opensource": true
+    }
+  ]
+}
