@@ -74,9 +74,16 @@ opus = next(m for m in catalog["models"] if m["id"] == "claude-opus-4.5")
 print(f"Input: ${opus['pricing']['input']}/1M tokens")
 ```
 
+## Claude Code Skill
+
+Copy `.claude/skills/llm-catalog/` to your `.claude/skills/` folder:
+- **User-wide:** `~/.claude/skills/llm-catalog/` (available in all projects)
+- **Project-specific:** `your-project/.claude/skills/llm-catalog/`
+
+Claude will automatically consult the catalog before writing code that involves LLM models, API calls, or configurations.
+
 ## Coming Soon
 
-- Claude Code skills
 - Cursor rules
 
 ## Contributing
