@@ -66,6 +66,11 @@
       "name": "Alibaba Qwen",
       "base_url": "https://dashscope.aliyuncs.com",
       "docs": "https://www.alibabacloud.com/help/en/model-studio"
+    },
+    "ibm_granite": {
+      "name": "IBM Granite",
+      "base_url": "https://huggingface.co/ibm-granite",
+      "docs": "https://www.ibm.com/granite/docs"
     }
   },
   "models": [
@@ -102,7 +107,7 @@
           "openrouter": { "reasoning": { "type": "enabled", "budget_tokens": "NUMBER" } }
         }
       },
-      "release_date": "2025-11-01",
+      "release_date": "2025-11-24",
       "is_opensource": false
     },
     {
@@ -174,7 +179,7 @@
           "openrouter": { "reasoning": { "type": "enabled", "budget_tokens": "NUMBER" } }
         }
       },
-      "release_date": "2025-10-01",
+      "release_date": "2025-10-15",
       "is_opensource": false
     },
     {
@@ -761,7 +766,7 @@
       "thinking": {
         "supported": true
       },
-      "release_date": "2025-01-01",
+      "release_date": "2025-10-01",
       "is_opensource": false
     },
     {
@@ -886,6 +891,174 @@
         "supported": false
       },
       "release_date": "2025-04-29",
+      "is_opensource": true
+    },
+    {
+      "id": "qwen3-vl-235b-a22b-instruct",
+      "name": "Qwen3-VL-235B-A22B-Instruct",
+      "description": "235B MoE (22B active) vision-language model. Supports VQA, document parsing, chart/table extraction, multilingual OCR, video understanding, and GUI automation.",
+      "provider": "qwen",
+      "api_model_id": "qwen3-vl-235b-a22b-instruct",
+      "aliases": {
+        "qwen": "qwen3-vl-235b-a22b-instruct",
+        "openrouter": "qwen/qwen3-vl-235b-a22b-instruct"
+      },
+      "pricing": {
+        "input_per_1m": 0.20,
+        "output_per_1m": 1.20,
+        "currency": "USD"
+      },
+      "context_window": 262144,
+      "max_output_tokens": 65536,
+      "modalities": {
+        "input": ["text", "image", "video"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "vision", "streaming"],
+      "thinking": {
+        "supported": false
+      },
+      "release_date": "2025-09-23",
+      "is_opensource": true
+    },
+    {
+      "id": "qwen3-vl-30b-a3b-instruct",
+      "name": "Qwen3-VL-30B-A3B-Instruct",
+      "description": "30B MoE (3B active) vision-language model. Supports spatial grounding, long-form visual comprehension, video timeline alignment, and GUI automation.",
+      "provider": "qwen",
+      "api_model_id": "qwen3-vl-30b-a3b-instruct",
+      "aliases": {
+        "qwen": "qwen3-vl-30b-a3b-instruct",
+        "openrouter": "qwen/qwen3-vl-30b-a3b-instruct"
+      },
+      "pricing": {
+        "input_per_1m": 0.14,
+        "output_per_1m": 1.00,
+        "currency": "USD"
+      },
+      "context_window": 131072,
+      "max_output_tokens": 131072,
+      "modalities": {
+        "input": ["text", "image", "video"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "vision", "streaming"],
+      "thinking": {
+        "supported": false
+      },
+      "release_date": "2025-10-06",
+      "is_opensource": true
+    },
+    {
+      "id": "qwen3-vl-8b-instruct",
+      "name": "Qwen3-VL-8B-Instruct",
+      "description": "Compact 8B dense vision-language model. Supports OCR in 32 languages, document parsing, visual QA, and spatial reasoning.",
+      "provider": "qwen",
+      "api_model_id": "qwen3-vl-8b-instruct",
+      "aliases": {
+        "qwen": "qwen3-vl-8b-instruct",
+        "openrouter": "qwen/qwen3-vl-8b-instruct"
+      },
+      "pricing": {
+        "input_per_1m": 0.064,
+        "output_per_1m": 0.40,
+        "currency": "USD"
+      },
+      "context_window": 131072,
+      "max_output_tokens": 32768,
+      "modalities": {
+        "input": ["text", "image", "video"],
+        "output": ["text"]
+      },
+      "features": ["vision", "streaming"],
+      "thinking": {
+        "supported": false
+      },
+      "release_date": "2025-10-14",
+      "is_opensource": true
+    },
+    {
+      "id": "granite-4.0-h-tiny",
+      "name": "Granite 4.0 H-Tiny",
+      "description": "7B MoE (1B active) hybrid Mamba2/Transformer model. 64 experts with 6 active. Optimized for low latency and long-context scenarios.",
+      "provider": "ibm_granite",
+      "api_model_id": "ibm-granite/granite-4.0-h-tiny",
+      "aliases": {
+        "huggingface": "ibm-granite/granite-4.0-h-tiny"
+      },
+      "pricing": {
+        "input_per_1m": 0,
+        "output_per_1m": 0,
+        "currency": "USD",
+        "note": "Open source, self-hosted"
+      },
+      "context_window": 128000,
+      "max_output_tokens": 8192,
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "streaming"],
+      "thinking": {
+        "supported": false
+      },
+      "release_date": "2025-10-02",
+      "is_opensource": true
+    },
+    {
+      "id": "granite-4.0-micro",
+      "name": "Granite 4.0 Micro",
+      "description": "3B dense transformer model. Traditional architecture for environments without Mamba2 support.",
+      "provider": "ibm_granite",
+      "api_model_id": "ibm-granite/granite-4.0-micro",
+      "aliases": {
+        "huggingface": "ibm-granite/granite-4.0-micro"
+      },
+      "pricing": {
+        "input_per_1m": 0,
+        "output_per_1m": 0,
+        "currency": "USD",
+        "note": "Open source, self-hosted"
+      },
+      "context_window": 128000,
+      "max_output_tokens": 8192,
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      },
+      "features": ["streaming"],
+      "thinking": {
+        "supported": false
+      },
+      "release_date": "2025-10-02",
+      "is_opensource": true
+    },
+    {
+      "id": "granite-4.0-h-1b",
+      "name": "Granite 4.0 H-1B",
+      "description": "1.5B dense hybrid Mamba2/Transformer model. Supports FIM code completion and tool calling. Ideal for edge and on-device deployment.",
+      "provider": "ibm_granite",
+      "api_model_id": "ibm-granite/granite-4.0-h-1b",
+      "aliases": {
+        "huggingface": "ibm-granite/granite-4.0-h-1b"
+      },
+      "pricing": {
+        "input_per_1m": 0,
+        "output_per_1m": 0,
+        "currency": "USD",
+        "note": "Open source, self-hosted"
+      },
+      "context_window": 128000,
+      "max_output_tokens": 8192,
+      "modalities": {
+        "input": ["text"],
+        "output": ["text"]
+      },
+      "features": ["tool_use", "streaming"],
+      "thinking": {
+        "supported": false
+      },
+      "release_date": "2025-10-29",
       "is_opensource": true
     }
   ]
